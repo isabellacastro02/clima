@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import { CloudSun} from 'lucide-react';
 
 function App() {
   const [cidade, setCidade] = useState('');
@@ -48,7 +49,13 @@ function App() {
     <>
       <div className="app-container">
         <div className="content-wrapper">
-
+        <header>
+          <h1>
+          <CloudSun color="purple" size={48} />
+            Consulta de Clima
+          </h1>
+          <p>Exemplo de consumo de API com React</p>
+        </header>
         </div>
       </div>
     </>
