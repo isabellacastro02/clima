@@ -50,6 +50,24 @@ header p{
   transition: border-coloe 0.2s, box-shadow 0.2s;
 }
 .busca-container input:focus{
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px #3b83f65f;
+  border-color: #923bf6;
+  box-shadow: 0 0 0 3px #9524ff5f;
+}
+.busca-container button{
+  padding: 12px 24px;
+  background: #7c11c8;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.busca-container button:hover{
+  background: #a75cdc;
+}
+.busca-container button:disabled{
+  cursor: not-allowed;
+  background: #9ca3af;
 }

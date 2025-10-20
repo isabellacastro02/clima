@@ -67,6 +67,10 @@ function App() {
           </div>
         </div>
 
+        {/* Resultado do Clima */}
+        <div id="card-resultado">
+
+        </div> Fecha #card-resultado
         </div>
       </div>
     </>
