@@ -50,12 +50,12 @@ header p{
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 .busca-container input:focus{
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px #3b83f65f;
+  border-color: #923bf6;
+  box-shadow: 0 0 0 3px #8c3bf65f;
 }
 .busca-container button{
   padding: 12px 24px;
-  background: #3b82f6;
+  background: #7a2ff1;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -65,7 +65,7 @@ header p{
   transition: background 0.2s;
 }
 .busca-container button:hover{
-  background: #2563eb;
+  background: #a56ffc;
 }
 .busca-container button:disabled{
   cursor: not-allowed;
@@ -96,13 +96,51 @@ header p{
   text-transform: capitalize;
   font-size: 1.2em;
 }
-.temperatura-box{
+#temperatura-box{
   text-align: center;
   margin-bottom: 32px;
 }
-.temperatura-valor{
+#temperatura-valor{
   font-size: 3.7em;
   font-weight: bold;
   color: #2563eb;
   margin-bottom: 8px;
+}
+#sensacao{
+  color: #4b5563;
+}
+.detalhes-box{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 16px;
+}
+.detalhes-item{
+  background: #ccc;
+font-size: 16px;
+border-radius: 8px;
+text-align: center;
+color: #444;
+margin-bottom: 4px;
+}
+.detalhes-item h3{
+  color: #222;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px){
+  .content-wrapper{
+    min-width: 100%;
+  }
+  .busca-container input{
+    width: 80%;
+  }
+  .detalhes-box{
+    grid-template-columns: 1fr;
+  }
+  #temperatura-valor{
+    font-size: 3em;
+  }
+  header h1{
+    font-size: 1.8em;
+  }
 }
