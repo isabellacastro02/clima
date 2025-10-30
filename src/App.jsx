@@ -62,16 +62,26 @@ function App() {
               <input 
                 type="text" 
                 placeholder="Digite o nome da cidade.." 
+                value={cidade}
+                onChange={(e) => setCidade(e.target.value)}
+                onKeyPress={handleKeyPress}
               />
-              <button>Buscar</button>
+              <button
+                onClick={buscaClima}
+                disabled={carregando}
+              >
+                {carregando ? "Buscando..." : "Buscar"}
+              </button>
             </div>
+            {erro && <div className="erro-message">{erro}</div>}
           </div>
 
+          {clima && (<> 
           {/* Resultado do Clima */}
           <div id="card-resultado">
             <div id="cidade-info">
               <div id="cidade-nome">
-                <MapPinned style={{color: '#550808ff'}} size={48} />
+                <MapPinned style={{color: '#923bf6'}} size={48} />
                 Campinas, BR
               </div>
               <p id="cidade-desc">
@@ -109,8 +119,9 @@ function App() {
                 <h3>15km/h</h3>
               </div>
 
+            </div> {/* Fecha detalhes-box */}
           </div> {/* Fecha #card-resultado */}
-          </div>
+          </>)}
         </div>
       </div>
     </>
