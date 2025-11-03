@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import { CloudSun, MapPinned, ThermometerSun, Droplet, Wind } from 'lucide-react';
+import { CloudSun, MapPinned, Thermometer, Droplet, Wind } from 'lucide-react';
 
 function App() {
   const [cidade, setCidade] = useState('');
@@ -12,7 +12,7 @@ function App() {
   const buscaClima = async () => {
     //validação básica
     if(!cidade.trim()){
-      setErro('Por favor, digite uma cidade');
+      setErro('❗ Por favor, digite uma cidade');
       return;
     }
 
@@ -21,11 +21,11 @@ function App() {
 
     try{
       const API_KEY = "50878f4678cd0841144b44b2fca0ccc0";
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid${API_KEY}&units=metric&lang=pt_br`;
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${API_KEY}&units=metric&lang=pt_br`;
       const resposta = await fetch(url);
 
       if(!resposta.ok){
-        throw new Error('Cidade não encontrada');
+        throw new Error('❗ Cidade não encontrada');
       }
 
       const dados = await resposta.json();
@@ -73,7 +73,7 @@ function App() {
                 {carregando ? "Buscando..." : "Buscar"}
               </button>
             </div>
-            {erro && <div className="erro-message">{erro}</div>}
+            {erro && <div className="error-message">{erro}</div>}
           </div>
 
           {clima && (<> 
@@ -102,7 +102,7 @@ function App() {
             <div className="detalhes-box">
 
               <div className="detalhes-item">
-                <ThermometerSun style={{color: '#923bf6'}} size={32} />
+                <Thermometer style={{color: '#923bf6'}} size={32} />
                 <h2>Min/Max</h2>
                 <h3>{Math.round(clima.main.temp.min)}ºC
                   / {Math.round(clima.main.temp_max)}ºC
